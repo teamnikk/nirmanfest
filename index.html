@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Primary SEO -->
+  <title>ESTRUCTURA 2K26 — The Ultimate Civil Engineering Fest | DCRUST Murthal</title>
+  <meta name="description" content="ESTRUCTURA 2K26 — Annual civil engineering fest by Nirmaan Society, DCRUST Murthal. 15 May 2026. 6 events, cash prizes, certificates. Register free!">
+  <meta name="keywords" content="ESTRUCTURA 2K26, civil engineering fest, DCRUST Murthal, Nirmaan Society, bridge building, engineering competition, technical fest 2026">
+  <meta name="author" content="Nirmaan Society, DCRUST Murthal">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://estructura2k26.netlify.app/">
+  <meta name="theme-color" content="#02030A">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="ESTRUCTURA 2K26 — The Ultimate Civil Engineering Fest">
+  <meta property="og:description" content="Join DCRUST Murthal's biggest civil engineering fest. 15 May 2026 · 6 events · Free registration.">
+  <meta property="og:url"         content="https://estructura2k26.netlify.app/">
+  <meta property="og:image"       content="https://estructura2k26.netlify.app/images/og-cover.jpg">
+  <meta property="og:site_name"   content="ESTRUCTURA 2K26">
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="ESTRUCTURA 2K26 — Civil Fest @ DCRUST">
+  <meta name="twitter:description" content="15 May 2026 · MV Block, DCRUST Murthal · Free entry · Cash prizes.">
+
+  <!-- Schema.org Event -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Event","name":"ESTRUCTURA 2K26","description":"Annual civil engineering fest organized by Nirmaan Society, DCRUST Murthal.","startDate":"2026-05-15T09:00:00+05:30","endDate":"2026-05-15T17:00:00+05:30","location":{"@type":"Place","name":"MV Block, DCRUST Murthal","address":{"@type":"PostalAddress","addressLocality":"Murthal","addressRegion":"Haryana","addressCountry":"IN"}},"organizer":{"@type":"Organization","name":"Nirmaan Society, DCRUST Murthal"},"offers":{"@type":"Offer","url":"https://forms.gle/G7ZX8vU5rQ7zrY178","price":"0","priceCurrency":"INR","availability":"https://schema.org/InStock"},"eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"}
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='14' fill='%2302030A'/><text y='.9em' font-size='72' x='14'>🏗️</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     PRELOADER
+═══════════════════════════════════════════════════════════ -->
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="pre-inner">
+    <div class="pre-wordmark">
+      <span class="pre-char">E</span>
+      <span class="pre-char">S</span>
+      <span class="pre-char">T</span>
+      <span class="pre-char">R</span>
+      <span class="pre-char">U</span>
+      <span class="pre-char amber">C</span>
+      <span class="pre-char amber">T</span>
+      <span class="pre-char amber">U</span>
+      <span class="pre-char">R</span>
+      <span class="pre-char">A</span>
+    </div>
+    <div class="pre-progress"><div class="pre-bar"></div></div>
+    <div class="pre-sub">Loading 2K26 Experience</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     CURSOR (desktop)
+═══════════════════════════════════════════════════════════ -->
+<div id="c-dot" class="cur" aria-hidden="true"></div>
+<div id="c-ring" class="cur" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     TOAST DOCK
+═══════════════════════════════════════════════════════════ -->
+<div class="toast-dock" id="toast-dock" aria-live="polite"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     BACK TO TOP
+═══════════════════════════════════════════════════════════ -->
+<button id="btt" aria-label="Back to top">↑</button>
+
+<!-- ══════════════════════════════════════════════════════════
+     EVENT MODAL
+═══════════════════════════════════════════════════════════ -->
+<div id="ev-modal" role="dialog" aria-modal="true" aria-label="Event details">
+  <div class="modal-panel">
+    <div class="mp-head">
+      <div class="mp-emoji" id="m-emoji" aria-hidden="true"></div>
+      <div>
+        <h2 class="mp-title" id="m-title"></h2>
+        <div class="mp-time" id="m-time"></div>
+      </div>
+      <button class="mp-close" id="m-close" aria-label="Close modal">✕</button>
+    </div>
+    <div class="mp-body">
+      <p class="mp-desc" id="m-desc"></p>
+      <div class="mp-rul-title">Rules &amp; Format</div>
+      <div id="m-rules"></div>
+    </div>
+    <div class="mp-foot">
+      <div class="mp-prize" id="m-prize"></div>
+      <a id="m-reg" href="#" target="_blank" rel="noopener"
+         class="btn btn-fire" style="font-size:0.82rem;padding:12px 22px;">
+        Register Free →
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     MOBILE MENU
+═══════════════════════════════════════════════════════════ -->
+<div id="mob-menu" role="navigation" aria-label="Mobile menu">
+  <span class="mob-link" data-goto="hero">Home</span>
+  <span class="mob-link" data-goto="about">About</span>
+  <span class="mob-link" data-goto="events">Events</span>
+  <span class="mob-link" data-goto="schedule">Schedule</span>
+  <span class="mob-link" data-goto="gallery">Gallery</span>
+  <span class="mob-link" data-goto="team">Team</span>
+  <span class="mob-link" data-goto="contact">Contact</span>
+  <a href="https://forms.gle/G7ZX8vU5rQ7zrY178" target="_blank" rel="noopener"
+     class="btn btn-fire mob-reg" style="font-style:italic;">Register Free</a>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════════════ -->
+<header id="navbar" role="banner">
+  <div class="nb-inner">
+    <span class="nb-logo" data-goto="hero">ESTRU<span>C</span>TURA</span>
+
+    <nav class="nb-links" aria-label="Main navigation">
+      <span class="nb-link" data-goto="about">About</span>
+      <span class="nb-link" data-goto="events">Events</span>
+      <span class="nb-link" data-goto="schedule">Schedule</span>
+      <span class="nb-link" data-goto="gallery">Gallery</span>
+      <span class="nb-link" data-goto="team">Team</span>
+      <span class="nb-link" data-goto="contact">Contact</span>
+    </nav>
+
+    <div class="nb-right">
+      <button class="nb-theme" id="theme-btn" aria-label="Toggle light/dark mode" title="Toggle theme"></button>
+      <a href="https://forms.gle/G7ZX8vU5rQ7zrY178" target="_blank" rel="noopener"
+         class="nb-cta" style="display:none" id="nb-reg-desktop">Register Free</a>
+      <button class="nb-burger" id="burger" aria-label="Open navigation menu" aria-expanded="false">
+        <b></b><b></b><b></b>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="ESTRUCTURA 2K26 — Hero">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-noise" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <!-- Pill -->
+    <div class="hero-pill">
+      <div class="hero-pill-dot" aria-hidden="true"></div>
+      <span>Nirmaan Society · DCRUST Murthal · 2026</span>
+    </div>
+
+    <!-- Main heading -->
+    <h1 aria-label="ESTRUCTURA 2K26">
+      <div class="hero-h hero-h1">ESTRU</div>
+      <div class="hero-h hero-h2">CTURA</div>
+    </h1>
+
+    <!-- Year chip -->
+    <div class="hero-year" aria-label="2K26">
+      <div class="hero-year-line" aria-hidden="true"></div>
+      <div class="hero-year-num">2K26</div>
+      <div class="hero-year-label">Edition</div>
+    </div>
+
+    <!-- Description + CTAs -->
+    <div class="hero-row">
+      <p class="hero-desc">
+        The ultimate civil engineering challenge. Where blueprints meet reality and engineers
+        prove their worth. Hosted by <strong>Nirmaan Society</strong>, Civil Dept., DCRUST.
+      </p>
+      <div class="hero-btns">
+        <a href="https://forms.gle/G7ZX8vU5rQ7zrY178" target="_blank" rel="noopener"
+           class="btn btn-fire" aria-label="Register now for ESTRUCTURA 2K26">
+          🚀 Register Free
+        </a>
+        <span class="btn btn-outline" data-goto="events">See Events</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-line" aria-hidden="true"></div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     COUNTDOWN
+═══════════════════════════════════════════════════════════ -->
+<div id="countdown" aria-label="Countdown to ESTRUCTURA 2K26">
+  <div class="cd-wrap">
+    <div class="cd-label" data-rev="up">
+      <div class="cd-label-top">Countdown to</div>
+      <div class="cd-label-main">ESTRUCTURA 2K26</div>
+    </div>
+    <div class="cd-units" role="timer" aria-label="Time remaining">
+      <div class="cd-unit">
+        <div class="cd-num" id="cd-d">00</div>
+        <div class="cd-u">Days</div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-num" id="cd-h">00</div>
+        <div class="cd-u">Hours</div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-num" id="cd-m">00</div>
+        <div class="cd-u">Min</div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-num" id="cd-s">00</div>
+        <div class="cd-u">Sec</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     STATS
+═══════════════════════════════════════════════════════════ -->
+<section id="stats" aria-label="Key highlights">
+  <div class="stats-row" id="stats-row">
+    <!-- Populated by JS -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════════════════════ -->
+<section id="about" class="sec" aria-label="About ESTRUCTURA">
+  <div class="wrap">
+    <div class="about-layout">
+      <!-- Text -->
+      <div class="about-text">
+        <div class="ey" data-rev="up">About the Fest</div>
+        <h2 class="sh" data-rev="up" data-d="1">Where Engineers<br>Build Legends</h2>
+
+        <p class="about-body" data-rev="up" data-d="2">
+          ESTRUCTURA 2K26 is the flagship annual fest of the Civil Engineering Department at
+          DCRUST Murthal — organized by <strong>Nirmaan Society</strong>. It's a day where textbook
+          knowledge collides with real-world engineering instincts.
+        </p>
+        <p class="about-body" data-rev="up" data-d="3">
+          Compete in bridge-building, quiz battles, quantity surveying, structural Jenga, and more.
+          All participants receive <strong>certificates of participation</strong>. Winners take home
+          cash prizes and engineering glory.
+        </p>
+
+        <div class="tag-row" data-rev="up" data-d="4">
+          <div class="tag"><div class="tag-dot"></div>Free Entry</div>
+          <div class="tag"><div class="tag-dot"></div>Cash Prizes</div>
+          <div class="tag"><div class="tag-dot"></div>Certificates</div>
+          <div class="tag"><div class="tag-dot"></div>6 Events</div>
+          <div class="tag"><div class="tag-dot"></div>Live Judging</div>
+          <div class="tag"><div class="tag-dot"></div>Open to All</div>
+        </div>
+
+        <div class="about-btns" data-rev="up" data-d="5">
+          <a href="https://forms.gle/G7ZX8vU5rQ7zrY178" target="_blank" rel="noopener"
+             class="btn btn-fire">Register Now →</a>
+          <span class="btn btn-outline" data-goto="events">View Events</span>
+        </div>
+      </div>
+
+      <!-- Blueprint card -->
+      <div class="about-card-wrap" data-rev="right">
+        <div class="drawing-card">
+          <div class="dc-header">
+            <div class="dc-dots">
+              <s></s><s></s><s></s>
+            </div>
+            <div class="dc-file">BRIDGE_ELEVATION.SVG</div>
+          </div>
+          <div class="dc-body">
+            <!-- Inline SVG engineering drawing -->
+            <svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 style="width:100%;max-width:300px" aria-label="Bridge engineering drawing">
+              <defs>
+                <marker id="arr2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+                  <polygon points="0,0 7,2.5 0,5" fill="rgba(255,140,0,0.55)"/>
+                </marker>
+              </defs>
+              <!-- Ground -->
+              <line x1="10" y1="155" x2="290" y2="155" stroke="rgba(255,140,0,0.2)" stroke-width="1" stroke-dasharray="5,5"/>
+              <!-- Deck -->
+              <rect x="25" y="112" width="250" height="5" rx="1"
+                    fill="rgba(255,140,0,0.12)" stroke="rgba(255,140,0,0.55)" stroke-width="1"/>
+              <!-- Left arch -->
+              <path d="M25 117 Q88 55 150 117" stroke="rgba(255,140,0,0.75)" stroke-width="1.5" fill="none"/>
+              <!-- Right arch -->
+              <path d="M150 117 Q212 55 275 117" stroke="rgba(255,140,0,0.75)" stroke-width="1.5" fill="none"/>
+              <!-- Hangers left -->
+              <line x1="62"  y1="81"  x2="62"  y2="112" stroke="rgba(255,140,0,0.28)" stroke-width="0.8"/>
+              <line x1="92"  y1="66"  x2="92"  y2="112" stroke="rgba(255,140,0,0.28)" stroke-width="0.8"/>
+              <line x1="122" y1="60"  x2="122" y2="112" stroke="rgba(255,140,0,0.28)" stroke-width="0.8"/>
+              <!-- Hangers right -->
+              <line x1="178" y1="60"  x2="178" y2="112" stroke="rgba(255,140,0,0.28)" stroke-width="0.8"/>
+              <line x1="208" y1="66"  x2="208" y2="112" stroke="rgba(255,140,0,0.28)" stroke-width="0.8"/>
+              <line x1="238" y1="81"  x2="238" y2="112" stroke="rgba(255,140,0,0.28)" stroke-width="0.8"/>
+              <!-- Piers -->
+              <rect x="22"  y="117" width="6" height="38" fill="rgba(255,140,0,0.12)" stroke="rgba(255,140,0,0.4)" stroke-width="0.8"/>
+              <rect x="147" y="117" width="6" height="38" fill="rgba(255,140,0,0.12)" stroke="rgba(255,140,0,0.4)" stroke-width="0.8"/>
+              <rect x="272" y="117" width="6" height="38" fill="rgba(255,140,0,0.12)" stroke="rgba(255,140,0,0.4)" stroke-width="0.8"/>
+              <!-- Footings -->
+              <rect x="17"  y="153" width="16" height="3" rx="0.5" fill="rgba(255,140,0,0.3)"/>
+              <rect x="142" y="153" width="16" height="3" rx="0.5" fill="rgba(255,140,0,0.3)"/>
+              <rect x="267" y="153" width="16" height="3" rx="0.5" fill="rgba(255,140,0,0.3)"/>
+              <!-- Dim line -->
+              <line x1="25" y1="168" x2="275" y2="168" stroke="rgba(255,140,0,0.3)" stroke-width="0.8" marker-end="url(#arr2)"/>
+              <text x="150" y="178" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6.5" fill="rgba(255,140,0,0.5)">SPAN = 250 UNITS</text>
+              <!-- Label -->
+              <text x="150" y="44" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="rgba(255,140,0,0.5)">ARCH BRIDGE — ELEVATION</text>
+              <text x="150" y="54" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5.5" fill="rgba(255,140,0,0.3)">SCALE 1:100 · NIRMAAN SOCIETY 2026</text>
+              <!-- Node dots -->
+              <circle cx="25"  cy="117" r="2.5" fill="rgba(255,140,0,0.7)"/>
+              <circle cx="275" cy="117" r="2.5" fill="rgba(255,140,0,0.7)"/>
+              <circle cx="150" cy="117" r="2.5" fill="rgba(255,140,0,0.7)"/>
+              <circle cx="150" cy="52"  r="4"   fill="var(--a1)" opacity="0.9"/>
+              <circle cx="25"  cy="52"  r="2"   fill="rgba(255,140,0,0.5)"/>
+              <circle cx="275" cy="52"  r="2"   fill="rgba(255,140,0,0.5)"/>
+            </svg>
+          </div>
+          <span class="dc-badge">Event #5 · Bridge the Gap</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     EVENTS
+═══════════════════════════════════════════════════════════ -->
+<section id="events" class="sec" aria-label="Events lineup">
+  <div class="wrap">
+    <div class="ev-head">
+      <div>
+        <div class="ey" data-rev="up">Event Lineup</div>
+        <h2 class="sh" data-rev="up" data-d="1">6 Events.<br>One Epic Day.</h2>
+      </div>
+      <div class="filter-strip" id="filter-strip" data-rev="up" data-d="2"
+           role="group" aria-label="Filter events by category">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+    <div class="ev-grid" id="ev-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SCHEDULE
+═══════════════════════════════════════════════════════════ -->
+<section id="schedule" class="sec" aria-label="Day schedule">
+  <div class="wrap">
+    <div class="sch-layout">
+      <div class="sch-sidebar">
+        <div class="ey" data-rev="up">15 May 2026</div>
+        <h2 class="sh" data-rev="up" data-d="1">Day<br>Schedule</h2>
+        <p class="about-body" data-rev="up" data-d="2" style="margin-top:16px;">
+          A packed day of engineering, competition, and celebration at MV Block, DCRUST Murthal.
+        </p>
+        <div class="sch-info" data-rev="up" data-d="3">
+          <div class="sch-info-row">
+            <div class="sch-dot" style="background:var(--a1)"></div>
+            Competitive Events
+          </div>
+          <div class="sch-info-row">
+            <div class="sch-dot" style="background:#3B82F6"></div>
+            Ceremonies
+          </div>
+          <div class="sch-info-row">
+            <div class="sch-dot" style="background:var(--t3)"></div>
+            Breaks &amp; Admin
+          </div>
+        </div>
+      </div>
+      <div class="sch-main">
+        <div class="tl" id="tl-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     GALLERY
+═══════════════════════════════════════════════════════════ -->
+<section id="gallery" class="sec" aria-label="Gallery">
+  <div class="wrap">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:8px;">
+      <div>
+        <div class="ey" data-rev="up">Gallery</div>
+        <h2 class="sh" data-rev="up" data-d="1">ESTRUCTURA<br>2025 Rewind</h2>
+      </div>
+      <div class="gal-note" data-rev="up" data-d="2">
+        📁 Drop photos in <code>images/gallery/</code>
+      </div>
+    </div>
+    <div class="gal-grid" id="gal-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     ANNOUNCEMENT
+═══════════════════════════════════════════════════════════ -->
+<section id="announce" class="sec" aria-label="Official Announcement">
+  <div class="wrap">
+    <div class="ann-box" data-rev="scale">
+      <div class="ann-top">
+        <div class="ann-badge">
+          <div class="ann-bdot" aria-hidden="true"></div>
+          <span id="ann-badge-txt"></span>
+        </div>
+        <h2 class="ann-title" id="ann-title"></h2>
+      </div>
+      <div class="ann-body-area">
+        <p class="ann-text" id="ann-text"></p>
+        <div class="ann-actions">
+          <a href="https://forms.gle/G7ZX8vU5rQ7zrY178" target="_blank" rel="noopener"
+             class="btn btn-fire">Register for ESTRUCTURA 2K26 →</a>
+          <span class="btn btn-outline" data-goto="contact">Contact Team</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     TEAM
+═══════════════════════════════════════════════════════════ -->
+<section id="team" class="sec" aria-label="Team and coordinators">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="ey" data-rev="up" style="justify-content:center;">The Organizers</div>
+      <h2 class="sh" data-rev="up" data-d="1">Meet the Team</h2>
+    </div>
+    <div class="team-grid" id="team-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SPONSORS
+═══════════════════════════════════════════════════════════ -->
+<section id="sponsors" aria-label="Sponsors and partners">
+  <div class="wrap" style="max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter);">
+    <div style="text-align:center;" data-rev="up">
+      <div class="ey" style="justify-content:center;">Partners</div>
+      <h2 class="sh" data-rev="up" data-d="1">Our Proud<br>Sponsors</h2>
+      <p style="font-size:0.85rem;color:var(--t2);margin-top:10px;">
+        Interested? <span style="color:var(--a1);cursor:pointer;" data-goto="contact">Contact us →</span>
+      </p>
+    </div>
+    <div class="sp-grid" id="sp-grid" style="margin-top:32px;">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════════════════════ -->
+<section id="contact" class="sec" aria-label="Contact">
+  <div class="wrap">
+    <div class="con-grid">
+      <!-- Info column -->
+      <div class="con-info">
+        <div class="ey" data-rev="up">Get in Touch</div>
+        <h2 class="sh" data-rev="up" data-d="1">Contact<br>the Team</h2>
+        <div class="con-rows" data-rev="up" data-d="2">
+          <div class="con-row">
+            <div class="con-icon">📍</div>
+            <div>
+              <div class="con-lbl">Venue</div>
+              <div class="con-val">MV Block, DCRUST Murthal, Haryana</div>
+            </div>
+          </div>
+          <div class="con-row">
+            <div class="con-icon">📅</div>
+            <div>
+              <div class="con-lbl">Event Date</div>
+              <div class="con-val">15 May 2026 — 9:00 AM Onwards</div>
+            </div>
+          </div>
+          <div class="con-row">
+            <div class="con-icon">📞</div>
+            <div>
+              <div class="con-lbl">Anshuman Hooda — Coordinator</div>
+              <div class="con-val"><a href="tel:8950406937">+91 89504 06937</a></div>
+            </div>
+          </div>
+          <div class="con-row">
+            <div class="con-icon">📞</div>
+            <div>
+              <div class="con-lbl">Vinay Khatri — Coordinator</div>
+              <div class="con-val"><a href="tel:7056183187">+91 70561 83187</a></div>
+            </div>
+          </div>
+          <div class="con-row">
+            <div class="con-icon">⏰</div>
+            <div>
+              <div class="con-lbl">Registration Deadline</div>
+              <div class="con-val">10 May 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form column -->
+      <div class="con-form-wrap" data-rev="right">
+        <div class="form-card">
+          <div class="form-title">Send a Message</div>
+          <div class="form-sub">WE'LL RESPOND WITHIN 24 HRS</div>
+          <form id="con-form" novalidate autocomplete="on">
+            <div class="f-group">
+              <label class="f-lbl" for="f-name">Your Name</label>
+              <input type="text" id="f-name" class="f-ctrl"
+                     placeholder="e.g. Ravi Kumar" autocomplete="name">
+              <div class="f-err" id="f-name-err"></div>
+            </div>
+            <div class="f-group">
+              <label class="f-lbl" for="f-email">Email Address</label>
+              <input type="email" id="f-email" class="f-ctrl"
+                     placeholder="you@example.com" autocomplete="email">
+              <div class="f-err" id="f-email-err"></div>
+            </div>
+            <div class="f-group">
+              <label class="f-lbl" for="f-subject">Subject</label>
+              <input type="text" id="f-subject" class="f-ctrl"
+                     placeholder="e.g. Sponsorship Inquiry">
+            </div>
+            <div class="f-group">
+              <label class="f-lbl" for="f-msg">Message</label>
+              <textarea id="f-msg" class="f-ctrl"
+                        placeholder="How can we help you?"></textarea>
+              <div class="f-err" id="f-msg-err"></div>
+            </div>
+            <button type="submit" id="f-submit" class="btn btn-fire f-submit">
+              <span id="f-submit-txt">Send Message ✉️</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer id="footer" role="contentinfo">
+  <div class="ft-grid">
+    <div>
+      <div class="ft-logo">ESTRU<span>C</span>TURA</div>
+      <p class="ft-desc">
+        Annual civil engineering fest by Nirmaan Society, Civil Engineering Department,
+        DCRUST Murthal. Building tomorrow's engineers today.
+      </p>
+    </div>
+    <div>
+      <div class="ft-col-title">Quick Links</div>
+      <div class="ft-links">
+        <span class="ft-link" data-goto="hero">Home</span>
+        <span class="ft-link" data-goto="about">About Fest</span>
+        <span class="ft-link" data-goto="events">Events</span>
+        <span class="ft-link" data-goto="schedule">Schedule</span>
+        <span class="ft-link" data-goto="gallery">Gallery</span>
+        <span class="ft-link" data-goto="contact">Contact</span>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-title">Events</div>
+      <div class="ft-links">
+        <span class="ft-link">🗺️ Treasure Hunt</span>
+        <span class="ft-link">🧠 Civil Quiz</span>
+        <span class="ft-link">🃏 Tower of Cards</span>
+        <span class="ft-link">🏗️ Jenga Challenge</span>
+        <span class="ft-link">🌉 Bridge the Gap</span>
+        <span class="ft-link">💰 What the Buck</span>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2026 ESTRUCTURA 2K26 · Nirmaan Society · DCRUST Murthal</p>
+    <p class="ft-credit">
+      Crafted by <a href="https://linkedin.com/in/nikhilsain" target="_blank" rel="noopener">Nikhil Sain</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="data/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
